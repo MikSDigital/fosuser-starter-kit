@@ -7,6 +7,11 @@ fos_user:
     sender_name: "Creator 2018"
 
   registration:
-    form:
-      name: my_app_user_registration
-      type: App\Form\RegistrationFormType
+#    form:
+#      name: my_app_user_registration
+#      type: App\Form\RegistrationFormType
+    confirmation:
+      enabled: false
+      from_email:
+        address: my_username@gmail.com
+        sender_name: Demo registration
