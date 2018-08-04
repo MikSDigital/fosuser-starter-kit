@@ -12,6 +12,6 @@ class DefaultController extends Controller
      */
     public function index()
     {
-        return $this->render('admin/base.html.twig');
+        return $this->render('admin/pages/full_dashboard.html.twig');
     }
 }
