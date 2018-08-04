@@ -80,6 +80,9 @@
     "fig/link-util": {
         "version": "1.0.0"
     },
+    "friendsofsymfony/user-bundle": {
+        "version": "v2.1.2"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
@@ -91,6 +94,9 @@
     },
     "ocramius/proxy-manager": {
         "version": "2.1.1"
+    },
+    "paragonie/random_compat": {
+        "version": "v2.0.17"
     },
     "phpdocumentor/reflection-common": {
         "version": "1.0.1"
