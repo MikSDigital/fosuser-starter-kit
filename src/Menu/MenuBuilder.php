@@ -17,22 +17,39 @@ class MenuBuilder
 
     public function createMainMenu(RequestStack $requestStack)
     {
-        $menu = $this->factory->createItem('root', [
+        $factory = $this->factory;
+
+        $menu = $factory->createItem('root', [
             'childrenAttributes' => [
                 'class' => 'nav side-menu'
             ]
         ]);
 
-
-        $menu->addChild('Home', [
+        $home = $factory->createItem('Home', [
             'route' => 'admin_dasboard',
         ]);
-        $menu['Home']->setLabel('Главная');
-        $menu['Home']->setAttribute('id', 'menu_admin_pages');
-        $menu['Home']->setAttribute('class', 'submenu');
+
+        $menu->addChild($home);
+//        $menu['Home']->setLabel('Главная');
+//        $menu['Home']->setAttribute('id', 'menu_admin_pages');
+//        $menu['Home']->setAttribute('class', 'submenu');
 
 
-        // ... add more children
+        $dashboard = $factory->createItem('Dashboard', [
+            'route' => 'dashboard'
+        ]);
+
+        $dashboard1 = $factory->createItem('Dashboard1', [
+            'route' => 'dashboard1'
+        ]);
+
+        $dashboard2 = $factory->createItem('Dashboard2', [
+            'route' => 'dashboard2'
+        ]);
+
+        $home->addChild($dashboard);
+        $home->addChild($dashboard1);
+        $home->addChild($dashboard2);
 
         return $menu;
     }

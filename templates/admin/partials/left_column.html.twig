@@ -6,8 +6,6 @@
 
         <div class="clearfix"></div>
 
-        {{ knp_menu_render('main') }}
-
         <!-- menu profile quick info -->
         <div class="profile clearfix">
             <div class="profile_pic">
@@ -24,6 +22,12 @@
 
         <!-- sidebar menu -->
         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
+            <div class="menu_section">
+                <h3>Test</h3>
+                {{ knp_menu_render('main',{'currentClass': 'active', 'template': 'admin/partials/left_column_menu.html.twig'}) }}
+            </div>
+
             <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
@@ -122,7 +126,6 @@
                     <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
             </div>
-
         </div>
         <!-- /sidebar menu -->
 
