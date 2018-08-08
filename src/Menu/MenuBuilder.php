@@ -28,6 +28,7 @@ class MenuBuilder
         $home = $factory->createItem('Home', [
             'route' => 'admin_dasboard',
         ]);
+        $home->setAttribute('icon', 'fa fa-home');
 
         $menu->addChild($home);
 //        $menu['Home']->setLabel('Главная');

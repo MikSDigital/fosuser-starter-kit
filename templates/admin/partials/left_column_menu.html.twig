@@ -3,14 +3,19 @@
 {% block linkElement %}
     {% import "knp_menu.html.twig" as macros %}
 
-<a><i class="fa fa-home"></i> {{ block('label') }} <span class="fa fa-chevron-down"></span></a>
+<a>
+    {% if item.attribute('icon') is not empty  %}
+    <i class="{{ item.attribute('icon') }}"></i>
+    {% endif %}
 
-    <a href="{{ item.uri }}"{{ macros.attributes(item.linkAttributes) }}>
-        {% if item.attribute('icon') is not empty  %}
-            <i class="{{ item.attribute('icon') }}"></i>
-        {% endif %}
-        {{ block('label') }}
-    </a>
+    {{ block('label') }}
+    <span class="fa fa-chevron-down"></span>
+</a>
+
+    {#<a href="{{ item.uri }}"{{ macros.attributes(item.linkAttributes) }}>#}
+
+        {#{{ block('label') }}#}
+    {#</a>#}
 {% endblock %}
 
 {% block spanElement %}
