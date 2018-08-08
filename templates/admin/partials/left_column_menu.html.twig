@@ -3,13 +3,17 @@
 {% block linkElement %}
     {% import "knp_menu.html.twig" as macros %}
 
-<a>
+
     {% if item.attribute('icon') is not empty  %}
+<a>
     <i class="{{ item.attribute('icon') }}"></i>
+        {% else %}
+    <a href="{{ item.uri }}"{{ macros.attributes(item.linkAttributes) }}>
     {% endif %}
 
     {{ block('label') }}
     <span class="fa fa-chevron-down"></span>
+    {{ block('custom') }}
 </a>
 
 {% endblock %}
@@ -25,3 +29,10 @@
 {% endblock %}
 
 {% block label %}{{ item.label|trans }}{% endblock %}
+{% block custom %}
+    {% if item.level == 1 %}
+    A
+{% else %}
+    B
+{% endif %}
+{% endblock %}
