@@ -27,10 +27,15 @@ class MenuBuilder
 
         $home = $factory->createItem('Home', [
             'route' => 'admin_dasboard',
+            'childrenAttributes' => [
+                'class' => 'nav child_menu'
+            ]
         ]);
         $home->setAttribute('icon', 'fa fa-home');
+        $home->setLabel('Главная');
 
         $menu->addChild($home);
+
 //        $menu['Home']->setLabel('Главная');
 //        $menu['Home']->setAttribute('id', 'menu_admin_pages');
 //        $menu['Home']->setAttribute('class', 'submenu');
@@ -39,6 +44,7 @@ class MenuBuilder
         $dashboard = $factory->createItem('Dashboard', [
             'route' => 'dashboard'
         ]);
+
 
         $dashboard1 = $factory->createItem('Dashboard1', [
             'route' => 'dashboard1'
