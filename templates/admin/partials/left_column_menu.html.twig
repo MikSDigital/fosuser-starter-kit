@@ -1,25 +1,23 @@
 {% extends 'knp_menu.html.twig' %}
 
+{% import "knp_menu.html.twig" as macros %}
+
 {% block linkElement %}
-    {% import "knp_menu.html.twig" as macros %}
 
-
-    {% if item.attribute('icon') is not empty  %}
-<a>
-    <i class="{{ item.attribute('icon') }}"></i>
-        {% else %}
+{% if item.attribute('icon') is not empty  %}
+    <a><i class="{{ item.attribute('icon') }}"></i>
+{% else %}
     <a href="{{ item.uri }}"{{ macros.attributes(item.linkAttributes) }}>
-    {% endif %}
+{% endif %}
 
-    {{ block('label') }}
-    <span class="fa fa-chevron-down"></span>
-    {{ block('custom') }}
-</a>
+{{ block('label') }}
+
+{{ block('custom') }}
+    </a>
 
 {% endblock %}
 
 {% block spanElement %}
-    {% import "knp_menu.html.twig" as macros %}
     <span>{{ macros.attributes(item.labelAttributes) }}>
         {% if item.attribute('icon') is not empty  %}
             <i class="{{ item.attribute('icon') }}"></i>
@@ -31,8 +29,6 @@
 {% block label %}{{ item.label|trans }}{% endblock %}
 {% block custom %}
     {% if item.level == 1 %}
-    A
-{% else %}
-    B
-{% endif %}
+        <span class="fa fa-chevron-down"></span>
+    {% endif %}
 {% endblock %}

@@ -25,6 +25,8 @@ class MenuBuilder
             ]
         ]);
 
+        /**  HOME menu  **/
+
         $home = $factory->createItem('Home', [
             'route' => 'admin_dasboard',
             'childrenAttributes' => [
@@ -36,13 +38,15 @@ class MenuBuilder
 
         $menu->addChild($home);
 
+//        leave it here as a reminder
+
 //        $menu['Home']->setLabel('Главная');
 //        $menu['Home']->setAttribute('id', 'menu_admin_pages');
 //        $menu['Home']->setAttribute('class', 'submenu');
 
 
         $dashboard = $factory->createItem('Dashboard', [
-            'route' => 'dashboard'
+            'route' => 'admin_dasboard'
         ]);
 
 
@@ -57,6 +61,8 @@ class MenuBuilder
         $home->addChild($dashboard);
         $home->addChild($dashboard1);
         $home->addChild($dashboard2);
+
+        /**  end of HOME menu  **/
 
         return $menu;
     }
