@@ -106,7 +106,7 @@ class MenuBuilder
 
         $menu->addChild($additional_pages);
 
-        $extras = $factory->createItem('Exras', [
+        $extras = $factory->createItem('Extras', [
             'route' => 'e-commerce',
             'childrenAttributes' => [
                 'class' => 'nav child_menu'
