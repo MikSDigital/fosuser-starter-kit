@@ -66,4 +66,67 @@ class MenuBuilder
 
         return $menu;
     }
+
+    public function createLiveOnMenu(RequestStack $requestStack)
+    {
+        $factory = $this->factory;
+
+        $menu = $factory->createItem('root', [
+            'childrenAttributes' => [
+                'class' => 'nav side-menu'
+            ]
+        ]);
+
+        /**  Live ON menu  **/
+
+        $additional_pages = $factory->createItem('Additional pages', [
+            'route' => 'e-commerce',
+            'childrenAttributes' => [
+                'class' => 'nav child_menu'
+            ]
+        ]);
+        $additional_pages->setAttribute('icon', 'fa fa-bug');
+
+        $dashboard = $factory->createItem('E-commerce', [
+            'route' => 'e-commerce'
+        ]);
+
+
+        $dashboard1 = $factory->createItem('Dashboard1', [
+            'route' => 'dashboard1'
+        ]);
+
+        $dashboard2 = $factory->createItem('Dashboard2', [
+            'route' => 'dashboard2'
+        ]);
+
+        $additional_pages->addChild($dashboard);
+        $additional_pages->addChild($dashboard1);
+        $additional_pages->addChild($dashboard2);
+
+        $menu->addChild($additional_pages);
+
+        $extras = $factory->createItem('Exras', [
+            'route' => 'e-commerce',
+            'childrenAttributes' => [
+                'class' => 'nav child_menu'
+            ]
+        ]);
+        $extras->setAttribute('icon', 'fa fa-windows');
+
+        $extra1 = $factory->createItem('Extra1', [
+            'route' => 'extra1'
+        ]);
+
+        $extras->addChild($extra1);
+
+
+        $menu->addChild($extras);
+
+
+        /**  end of Live ON menu  **/
+
+        return $menu;
+    }
+
 }

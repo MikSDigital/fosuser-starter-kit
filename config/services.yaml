@@ -41,3 +41,10 @@ services:
         tags:
         - { name: knp_menu.menu, alias: main } # The alias is what is used to retrieve the menu
 
+    app.liveon_menu:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory: ["@app.menu_builder", createLiveOnMenu]
+        arguments: ["@request_stack"]
+        tags:
+        - { name: knp_menu.menu, alias: live_on } # The alias is what is used to retrieve the menu
+
