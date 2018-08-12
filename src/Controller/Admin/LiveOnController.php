@@ -21,7 +21,7 @@ class LiveOnController extends Controller
 
     /**
      * @return Response
-     * @Route("/extra1", name="extra1")
+     * @Route("/dashboard/extra1", name="extra1")
      */
     public function extra1()
     {
@@ -30,7 +30,7 @@ class LiveOnController extends Controller
 
     /**
      * @return Response
-     * @Route("/extra2", name="extra2")
+     * @Route("/dashboard/extra2", name="extra2")
      */
     public function extra2()
     {
