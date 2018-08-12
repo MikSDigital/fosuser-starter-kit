@@ -7,11 +7,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
+
 class LiveOnController extends Controller
 {
     /**
      * @return Response
-     * @Route("/e-commerce", name="e-commerce")
+     * @Route("/dashboard/e-commerce", name="e-commerce")
      */
     public function ECommerce()
     {

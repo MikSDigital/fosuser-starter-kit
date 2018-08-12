@@ -28,7 +28,7 @@ class MenuBuilder
         /**  HOME menu  **/
 
         $home = $factory->createItem('Home', [
-            'route' => 'admin_dasboard',
+            'route' => 'dashboard_index',
             'childrenAttributes' => [
                 'class' => 'nav child_menu'
             ]
@@ -46,7 +46,7 @@ class MenuBuilder
 
 
         $dashboard = $factory->createItem('Dashboard', [
-            'route' => 'admin_dasboard'
+            'route' => 'dashboard_index'
         ]);
 
 
