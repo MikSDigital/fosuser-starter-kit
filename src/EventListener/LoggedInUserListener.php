@@ -24,8 +24,10 @@ class LoggedInUserListener
      */
     public function onKernelRequest(GetResponseEvent $event)
     {
-        $request = $event->getRequest();
-        $path = $request->getPathInfo();
+        $request    = $event->getRequest();
+        $path       = $request->getPathInfo();
+
+
         if ($this->authChecker->isGranted('IS_AUTHENTICATED_REMEMBERED') && $this->isAnonymouslyPath($path)) {
             $response = new RedirectResponse($this->router->generate('dashboard'));
             $event->setResponse($response);

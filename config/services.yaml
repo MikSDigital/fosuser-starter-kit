@@ -48,7 +48,8 @@ services:
         tags:
         - { name: knp_menu.menu, alias: live_on } # The alias is what is used to retrieve the menu
 
-    App\EventListener\LoggedInUserListener:
-        tags:
-        - { name: kernel.event_listener, event: kernel.request }
+#    App\EventListener\LoggedInUserListener:
+#        autowire: true
+#        tags:
+#        - { name: kernel.event_listener, event: kernel.request }
 
