@@ -5,19 +5,16 @@ namespace App\EventListener;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\RouterInterface;
-use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Core\Security;
 
 class LoggedInUserListener
 {
     private $router;
-    private $authChecker;
     private $security;
 
-    public function __construct(RouterInterface $router, AuthorizationCheckerInterface $authChecker, Security $security)
+    public function __construct(RouterInterface $router, Security $security)
     {
         $this->router       = $router;
-        $this->authChecker  = $authChecker;
         $this->security     = $security;
     }
 
