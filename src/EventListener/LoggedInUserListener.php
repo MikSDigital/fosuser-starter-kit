@@ -6,20 +6,23 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+use Symfony\Component\Security\Core\Security;
 
 class LoggedInUserListener
 {
     private $router;
     private $authChecker;
+    private $security;
 
-    public function __construct(RouterInterface $router, AuthorizationCheckerInterface $authChecker)
+    public function __construct(RouterInterface $router, AuthorizationCheckerInterface $authChecker, Security $security)
     {
         $this->router       = $router;
         $this->authChecker  = $authChecker;
+        $this->security     = $security;
     }
 
     /**
-     * Redirect user to homepage if tryes to access in anonymously path
+     * Redirect user to homepage if tries to access in anonymously path
      * @param GetResponseEvent $event
      */
     public function onKernelRequest(GetResponseEvent $event)
@@ -27,8 +30,7 @@ class LoggedInUserListener
         $request    = $event->getRequest();
         $path       = $request->getPathInfo();
 
-
-        if ($this->authChecker->isGranted('IS_AUTHENTICATED_REMEMBERED') && $this->isAnonymouslyPath($path)) {
+        if ($this->security->getUser() && $this->isAnonymouslyPath($path)) {
             $response = new RedirectResponse($this->router->generate('dashboard'));
             $event->setResponse($response);
         }

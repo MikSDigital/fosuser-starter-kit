@@ -13,9 +13,13 @@ security:
         main:
             anonymous: true
 
-            logout: ~
-#                path: /logout
-#                target: /
+#            guard:
+#                authenticators:
+#                    - App\Security\LoginFormAuthenticator
+
+            logout:
+                path: /logout
+                target: /
 
             remember_me:
                 secret: '%env(APP_SECRET)%'
