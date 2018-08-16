@@ -37,7 +37,11 @@
                         {% include 'admin/partials/alert_messages.html.twig' %}
                     </div>
                 </div>
+                {% block fos_user_content %}{% endblock fos_user_content %}
+
             {% endblock %}
+
+
 
         </div>
         <!-- /page content -->
