@@ -28,9 +28,9 @@ class DefaultController extends Controller
 
     /**
      * @return Response
-     * @Route("/dashboard1", name="dashboard1")
+     * @Route("/dashboard/empty-page", name="empty_page")
      */
-    public function dashboard1()
+    public function emptyPage()
     {
         return $this->render('admin/pages/empty_page.html.twig');
     }
@@ -42,5 +42,14 @@ class DefaultController extends Controller
     public function dashboard2()
     {
         return new Response('Dashboard2');
+    }
+
+    /**
+     * @return Response
+     * @Route("/dashboard1", name="dashboard1")
+     */
+    public function dashboard1()
+    {
+        return new Response('Dashboard1');
     }
 }

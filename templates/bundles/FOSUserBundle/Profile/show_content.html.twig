@@ -2,12 +2,12 @@
 
 <div class="profile-container">
     <div class="row">
-        {{ include('bundles/FOSUserBundle/Profile/includes/action_menu.html.twig') }}
+        {#{{ include('bundles/FOSUserBundle/Profile/includes/action_menu.html.twig') }}#}
         <div class="profile-content-container col-md-9 col-md-offset-1">
             <h1>{{ app.user }}'s Profile Information</h1>
             <div class="profile-content well">
                 <div class="profile-image">
-                    <img class="img-circle" src="https://api.adorable.io/avatars/300/{{ app.user }}"/>
+                    <img src="{{ asset('assets/images/user.png') }}" alt="..." class="img-circle">
                 </div>
                 <br>
                 <div class="profile-info">
