@@ -32,7 +32,7 @@ class DefaultController extends Controller
      */
     public function dashboard1()
     {
-        return new Response('Dashboard1');
+        return $this->render('admin/pages/empty_page.html.twig');
     }
 
     /**

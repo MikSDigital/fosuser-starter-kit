@@ -50,7 +50,7 @@ class MenuBuilder
         ]);
 
 
-        $dashboard1 = $factory->createItem('Dashboard1', [
+        $dashboard1 = $factory->createItem('Empty page', [
             'route' => 'dashboard1'
         ]);
 
@@ -92,7 +92,7 @@ class MenuBuilder
         ]);
 
 
-        $dashboard1 = $factory->createItem('Dashboard1', [
+        $dashboard1 = $factory->createItem('Empty page', [
             'route' => 'dashboard1'
         ]);
 
